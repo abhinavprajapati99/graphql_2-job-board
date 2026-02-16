@@ -2,11 +2,21 @@ type Query {
     jobs: [Job!]
 }
 
+type Company {
+    id: ID!,
+    name:String,
+    description:String,
+
+}
+
+""" Represent a Job ad is posted to our board """
 type Job {
     id:String!,
-    companyId:String!,
+    """In this table date is represent when job is published"""
+    # companyId:String!,
     date:String,
     title:String!,
     description:String,
-    createdAt:String
+    company: Company!,
+    # createdAt:String
 }
